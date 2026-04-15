@@ -34,14 +34,16 @@ export default function EmailLayout({ children, preview, title }) {
         <Container style={styleContainer}>
           <Img alt="profile.rocks" draggable={false} height="45" src={BASE_URL + "/logo-long.png"} style={styleLogo} width="271" />
           {children}
-          <Text style={styleDisclaimer}>
-            profile.rocks will never email you to ask to disclose or verify your credit card or banking account number.
-          </Text>
-          <Text style={styleDisclaimer}>
-            Please do not reply to this email address, if you need assistance or simply want to get in touch, please visit the{" "}
-            <CustomLink href="https://www.profile.rocks/i/contact">contact page</CustomLink> or send an email to {REPLY_EMAIL_ADDRESS}
-          </Text>
-          <Hr style={styleLine} />
+          <Section style={styleSectionDisclaimer}>
+            <Text style={styleDisclaimer}>
+              <strong>profile.rocks</strong> will never email you to ask to disclose or verify your credit card or banking account number.
+            </Text>
+            <Text style={styleDisclaimer}>
+              Please do not reply to this email address, if you need assistance or simply want to get in touch, please visit the{" "}
+              <CustomLink href="https://www.profile.rocks/i/contact">contact page</CustomLink> or send an email to{" "}
+              <strong>{REPLY_EMAIL_ADDRESS}</strong>
+            </Text>
+          </Section>
           <Section style={styleFooter}>
             <Text>
               <CustomLink href="https://www.profile.rocks/i/help">Help</CustomLink> {SEPARATOR}{" "}
@@ -61,13 +63,6 @@ export default function EmailLayout({ children, preview, title }) {
 /**
  * @type {React.CSSProperties}
  */
-const styleHtml = {
-  colorScheme: "dark light"
-};
-
-/**
- * @type {React.CSSProperties}
- */
 const styleBody = {
   backgroundColor: "#000",
   color: "#c5c8c9",
@@ -78,29 +73,20 @@ const styleBody = {
  * @type {React.CSSProperties}
  */
 const styleContainer = {
-  padding: "16px"
+  padding: "16px",
+  paddingBottom: "32px"
+};
+
+/**
+ * @type {React.CSSProperties}
+ */
+const styleCopyright = {
+  color: "#a5a8a9",
+  margin: 0
 };
 
 const styleDisclaimer = {
   color: "#a5a8a9"
-};
-
-/**
- * @type {React.CSSProperties}
- */
-const styleLogo = {
-  marginBottom: "24px",
-  marginLeft: "auto",
-  marginRight: "auto",
-  userSelect: "none"
-};
-
-/**
- * @type {React.CSSProperties}
- */
-const styleLine = {
-  borderColor: "#303335",
-  marginTop: "28px"
 };
 
 /**
@@ -113,7 +99,23 @@ const styleFooter = {
 /**
  * @type {React.CSSProperties}
  */
-const styleCopyright = {
-  color: "#a5a8a9",
-  margin: 0
+const styleHtml = {
+  colorScheme: "dark light"
+};
+
+/**
+ * @type {React.CSSProperties}
+ */
+const styleLogo = {
+  marginBottom: "24px",
+  marginLeft: "auto",
+  marginRight: "auto",
+  userSelect: "none"
+};
+
+const styleSectionDisclaimer = {
+  borderTop: "1px solid #303335",
+  borderBottom: "1px solid #303335",
+  marginTop: "24px",
+  marginBottom: "8px"
 };

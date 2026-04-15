@@ -4,7 +4,7 @@ import EmailLayout from "#layouts/base";
 
 export default function EmailVerify() {
   return (
-    <EmailLayout title="Invitation" preview="You have been invited to join a profile.">
+    <EmailLayout preview="You have been invited to join a profile." title="Invitation">
       <Text>You have been invited to join profile:</Text>
       <Text style={styleProfileNameId}>{"{{profile}}"}</Text>
       <Text>
