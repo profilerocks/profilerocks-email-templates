@@ -9,7 +9,7 @@ export default function PaymentProfileError() {
         profile no longer exists.
       </Text>
       <Text>
-        A refund of <strong>{"{{amount}}"}</strong> has been automatically issued; if you haven't received it or the ammount is incorrect,
+        A refund of <strong>{"{{amount}}"}</strong> has been automatically issued; if you haven't received it or the amount is incorrect,
         please contact support.
       </Text>
     </EmailLayout>
