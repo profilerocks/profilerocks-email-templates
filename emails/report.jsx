@@ -1,4 +1,4 @@
-import { Column, Row, Section, Text } from "@react-email/components";
+import { Column, Heading, Row, Section, Text } from "@react-email/components";
 import EmailLayout from "#layouts/base";
 
 export default function EmailVerify() {
@@ -6,25 +6,17 @@ export default function EmailVerify() {
     <EmailLayout preview="Your report has been received: #{{reportPublicId}}" title="Report: #{{reportPublicId}}">
       <Text>Hello {"{{userName}}"},</Text>
       <Text>This is a confirmation that your report to the profile <strong>{"{{profileNameId}}"}</strong> has been received. It will be reviewed and </Text>
-      <Text>Report summary:</Text>
-      <Section style={styleReportSummarySection}>
-        <Row>
-          <Column><strong>Report ID:</strong></Column>
-          <Column>#{"{{reportPublicId}}"}</Column>
-        </Row>
-        <Row>
-          <Column><strong>Date:</strong></Column>
-          <Column>{"{{date}}"}</Column>
-        </Row>
-        <Row>
-          <Column><strong>Categories:</strong></Column>
-          <Column>{"{{categories}}"}</Column>
-        </Row>
-        <Row>
-          <Column><strong>URL:</strong></Column>
-          <Column>{"{{url}}"}</Column>
-        </Row>
-      </Section>
+      <Heading as="h3">Report summary:</Heading>
+      <Heading as="h4" style={styleReportHeading}>Report ID</Heading>
+      <Text style={styleReportValue}>#{"{{reportPublicId}}"}</Text>
+      <Heading as="h4" style={styleReportHeading}>URL</Heading>
+      <Text style={styleReportValue}>https://profile.rocks/{"{{profileNameId}}"}</Text>
+      <Heading as="h4" style={styleReportHeading}>Categories</Heading>
+      <Text style={styleReportValue}>{"{{categories}}"}</Text>
+      <Heading as="h4" style={styleReportHeading}>Date</Heading>
+      <Text style={styleReportValue}>{"{{date}}"}</Text>
+      <Heading as="h4" style={styleReportHeading}>Additional details</Heading>
+      <Text style={styleReportDetailsValue}>{"{{details}}"}</Text>
     </EmailLayout>
   );
 }
@@ -32,6 +24,22 @@ export default function EmailVerify() {
 /**
  * @type {React.CSSProperties}
  */
-const styleReportSummarySection = {
-  textAlign: "left"
+const styleReportDetailsValue = {
+  backgroundColor: "#08090a",
+  padding: "8px",
+  marginTop: "4px",
+}
+
+/**
+ * @type {React.CSSProperties}
+ */
+const styleReportHeading = {
+  marginBottom: 0
+};
+
+/**
+ * @type {React.CSSProperties}
+ */
+const styleReportValue = {
+  marginTop: 0,
 };
