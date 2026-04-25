@@ -39,7 +39,7 @@ export default function EmailLayout({ children, preview, title }) {
               <strong>profile.rocks</strong> will never email you to ask to disclose or verify your credit card or banking account number.
             </Text>
             <Text style={styleDisclaimer}>
-              Please do not reply to this email address, if you need assistance or simply want to get in touch, please visit the{" "}
+              If you need assistance or simply want to get in touch, please visit the{" "}
               <CustomLink href="https://www.profile.rocks/i/contact">contact page</CustomLink> or send an email to{" "}
               <strong>{REPLY_EMAIL_ADDRESS}</strong>
             </Text>
