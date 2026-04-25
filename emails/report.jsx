@@ -5,17 +5,31 @@ export default function EmailVerify() {
   return (
     <EmailLayout preview="Your report has been received: #{{reportPublicId}}" title="Report: #{{reportPublicId}}">
       <Text>Hello {"{{userName}}"},</Text>
-      <Text>This is a confirmation that your report to the profile <strong>{"{{profileNameId}}"}</strong> has been received. It will be reviewed and </Text>
+      <Text>
+        This is a confirmation that your report to the profile <strong>{"{{profileNameId}}"}</strong> has been received. It will be reviewed
+        and a decision will be made regarding this report and the profile. Once the review is complete, you will receive an email
+        notification with the outcome.
+      </Text>
       <Heading as="h3">Report summary:</Heading>
-      <Heading as="h4" style={styleReportHeading}>Report ID</Heading>
+      <Heading as="h4" style={styleReportHeading}>
+        Report ID
+      </Heading>
       <Text style={styleReportValue}>#{"{{reportPublicId}}"}</Text>
-      <Heading as="h4" style={styleReportHeading}>URL</Heading>
+      <Heading as="h4" style={styleReportHeading}>
+        URL
+      </Heading>
       <Text style={styleReportValue}>https://profile.rocks/{"{{profileNameId}}"}</Text>
-      <Heading as="h4" style={styleReportHeading}>Categories</Heading>
+      <Heading as="h4" style={styleReportHeading}>
+        Categories
+      </Heading>
       <Text style={styleReportValue}>{"{{categories}}"}</Text>
-      <Heading as="h4" style={styleReportHeading}>Date</Heading>
+      <Heading as="h4" style={styleReportHeading}>
+        Date
+      </Heading>
       <Text style={styleReportValue}>{"{{date}}"}</Text>
-      <Heading as="h4" style={styleReportHeading}>Additional details</Heading>
+      <Heading as="h4" style={styleReportHeading}>
+        Additional details
+      </Heading>
       <Text style={styleReportDetailsValue}>{"{{details}}"}</Text>
     </EmailLayout>
   );
@@ -26,9 +40,10 @@ export default function EmailVerify() {
  */
 const styleReportDetailsValue = {
   backgroundColor: "#08090a",
-  padding: "8px",
+  borderRadius: "4px",
   marginTop: "4px",
-}
+  padding: "8px"
+};
 
 /**
  * @type {React.CSSProperties}
@@ -41,5 +56,5 @@ const styleReportHeading = {
  * @type {React.CSSProperties}
  */
 const styleReportValue = {
-  marginTop: 0,
+  marginTop: 0
 };
