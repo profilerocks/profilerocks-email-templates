@@ -5,7 +5,7 @@ import EmailLayout from "#layouts/base";
 export default function EmailVerify() {
   return (
     <EmailLayout preview="You have been invited to join a profile." title="Invitation">
-      <Text>You have been invited to join profile:</Text>
+      <Text>You have been invited to join profile #{"{{profilePublicId}}"}:</Text>
       <Text style={styleProfileNameId}>{"{{profile}}"}</Text>
       <Text>
         If you did not expect this email, no further action is required, you can safely ignore it. You can accept the invitation inside the{" "}

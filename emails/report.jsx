@@ -3,10 +3,10 @@ import EmailLayout from "#layouts/base";
 
 export default function EmailReport() {
   return (
-    <EmailLayout preview="Your report to profile '{{profileNameId}}' has been received" title="Report: #{{reportPublicId}}">
+    <EmailLayout preview="Your report has been received." title="Report: #{{reportPublicId}}">
       <Text>Hello {"{{userName}}"},</Text>
       <Text>
-        This is a confirmation that your report to profile <strong>{"{{profileNameId}}"}</strong> has been received. It will be reviewed
+        This is a confirmation that your report to profile <strong>{"{{profile}}"}</strong> has been received. It will be reviewed
         and a decision will be made regarding this report and the profile. Once the review is complete, you will receive an email
         notification with the outcome.
       </Text>
@@ -16,9 +16,13 @@ export default function EmailReport() {
       </Heading>
       <Text style={styleReportValue}>#{"{{reportPublicId}}"}</Text>
       <Heading as="h4" style={styleReportHeading}>
+        Profile public ID
+      </Heading>
+      <Text style={styleReportValue}>#{"{{profilePublicId}}"}</Text>
+      <Heading as="h4" style={styleReportHeading}>
         URL
       </Heading>
-      <Text style={styleReportValue}>https://profile.rocks/{"{{profileNameId}}"}</Text>
+      <Text style={styleReportValue}>https://profile.rocks/{"{{profile}}"}</Text>
       <Heading as="h4" style={styleReportHeading}>
         Categories
       </Heading>
