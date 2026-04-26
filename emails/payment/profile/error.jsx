@@ -8,10 +8,6 @@ export default function PaymentProfileError() {
         The payment processing for plan {"{{plan}}"} for profile <strong>{"{{profile}}"}</strong> on {"{{billing}}"} has failed because the
         profile no longer exists.
       </Text>
-      <Text>
-        A refund of <strong>{"{{amount}}"}</strong> has been automatically issued; if you haven't received it or the amount is incorrect,
-        please contact support.
-      </Text>
     </EmailLayout>
   );
 }
