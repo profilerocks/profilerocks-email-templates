@@ -32,22 +32,11 @@ export default function EmailReport() {
       </Heading>
       <Text style={styleReportValue}>{"{{date}}"}</Text>
       <Heading as="h4" style={styleReportHeading}>
-        Additional details
+        Additional details {"{{detailsStatus}}"}
       </Heading>
-      <Text style={styleReportDetailsValue}>{"{{details}}"}</Text>
     </EmailLayout>
   );
 }
-
-/**
- * @type {React.CSSProperties}
- */
-const styleReportDetailsValue = {
-  backgroundColor: "#08090a",
-  borderRadius: "4px",
-  marginTop: "4px",
-  padding: "8px"
-};
 
 /**
  * @type {React.CSSProperties}
